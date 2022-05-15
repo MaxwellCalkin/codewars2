@@ -35,58 +35,27 @@
 
 
 
-//n > 1
-function u(n){
-  let uN = [0, 1, 1]
-  for(let i = 3; i <= n; i++){
-    uN.push(uN[i-uN[i-1]] + uN[i-uN[i-2]])
+function u(n, k) {
+  const rez = [1, 1];
+  let lengthSupUK = 0;
+  let comp = 0;
+
+  for (let i = rez.length; i < n; i++) {
+    rez[i] = rez[i - rez[i - 1]] + rez[i - rez[i - 2]];
+    if (k && rez[i] >= k) lengthSupUK++;
+    if (rez[i] < rez[i - 1]) comp++;
   }
-  const result = uN.pop()
-  console.log(result)
-  return result
+
+  return {
+    lengthSupUK,
+    comp
+  };
 }
 
 function lengthSupUK(n, k) {
-  if(!n){
-    if(!k){
-      return 1
-    }else{
-      return 0
-    }
-  }
-  let resultArr = [0,1]
-  if(n > 1){
-    for(let i = 2; i <= n; i++){
-      resultArr.push(u(i))
-    }
-  }
-  let result = 0
-  resultArr.forEach(x=>{
-    if(x >= k){
-      result++
-    }
-  })
-  console.log(resultArr)
-  return result
-  
+  return u(n, k).lengthSupUK;
 }
 
 function comp(n) {
-    if(n < 2){
-      return 0
-  }
-  let resultArr = [0,1]
-  if(n > 1){
-    for(let i = 2; i <= n; i++){
-      resultArr.push(u(i))
-    }
-  }
-  let result = 0
-  resultArr.slice(1).forEach((x,i,a)=>{
-    if(a[i] < a[i-1]){
-      result++
-    }
-  })
-  console.log(resultArr)
-  return result
+  return u(n).comp;
 }
