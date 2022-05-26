@@ -26,6 +26,7 @@ const eulersTotientFunction = (n)=>{
     }
     return Math.floor(result)
   }
+}
 
 
 
@@ -187,4 +188,4 @@ function properFractions(d){
 //       }
 //   }
 //   return propers
-// }
+//}
