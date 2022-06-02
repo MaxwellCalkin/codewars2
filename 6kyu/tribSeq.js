@@ -23,7 +23,7 @@ function tribonacci(signature,n){
   }else if(n === 2){
     return signature.slice(0,2)
   }else if(n === 3){
-    return signatur
+    return signature
   }else{
     for(let i = 3; i < n; i++){
       console.log(signature[-1])
