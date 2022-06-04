@@ -15,7 +15,7 @@
 // If you enjoyed this kata more advanced and generalized version of it can be found in the Xbonacci kata
 
 
-function tribonacci(signature,n)
+function tribonacci(signature,n){
   if(n === 0){
     return []
   }else if(n === 1){
