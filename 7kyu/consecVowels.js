@@ -31,3 +31,4 @@ function getTheVowels(word) {
     
     
     return result;
+}
