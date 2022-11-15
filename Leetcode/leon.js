@@ -8,3 +8,6 @@
 // If the average length is not an integer, use Math.round().
 // The input array's length > 1
 
+function averageLengthStrings(arr) {
+    
+}
