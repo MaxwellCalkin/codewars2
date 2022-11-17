@@ -9,5 +9,20 @@
 // The input array's length > 1
 
 function averageLengthStrings(arr) {
+
+    let totalLength = 0
+    arr.forEach(str => {
+        totalLength += str.length
+    })
+
+    const avgLength = Math.round(totalLength / arr.length)
     
+    let result = []
+
+    arr.forEach(str => {
+        let avgLengthStr = str[0].repeat(avgLength)
+        result.push(avgLengthStr)
+    })
+
+    return result
 }
